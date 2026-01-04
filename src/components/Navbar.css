@@ -1,0 +1,147 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar-scrolled {
+  box-shadow: 0 4px 20px rgba(219, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(219, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #DB0000;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  stroke-width: 2.5;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #DB0000 0%, #ff3333 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-desktop {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #DB0000;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #DB0000;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+.nav-link.active {
+  color: #DB0000;
+  background: rgba(219, 0, 0, 0.05);
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #DB0000;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar-mobile {
+  display: none;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .navbar-desktop {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-mobile {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(219, 0, 0, 0.1);
+  }
+
+  .nav-link-mobile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link-mobile:hover,
+  .nav-link-mobile.active {
+    background: rgba(219, 0, 0, 0.05);
+    color: #DB0000;
+  }
+
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+}
+

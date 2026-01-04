@@ -1,0 +1,76 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.button-icon {
+  flex-shrink: 0;
+}
+
+/* Variants */
+.button-primary {
+  background: linear-gradient(135deg, #DB0000 0%, #ff3333 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(219, 0, 0, 0.3);
+}
+
+.button-primary:hover {
+  box-shadow: 0 6px 25px rgba(219, 0, 0, 0.4);
+}
+
+.button-secondary {
+  background: white;
+  color: #DB0000;
+  border: 2px solid #DB0000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary:hover {
+  background: rgba(219, 0, 0, 0.05);
+}
+
+.button-outline {
+  background: transparent;
+  color: #DB0000;
+  border: 2px solid #DB0000;
+}
+
+.button-outline:hover {
+  background: #DB0000;
+  color: white;
+}
+
+/* Sizes */
+.button-small {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.button-medium {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+}
+
+.button-large {
+  padding: 1.25rem 3rem;
+  font-size: 1.125rem;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:disabled:hover {
+  transform: none;
+}
+
