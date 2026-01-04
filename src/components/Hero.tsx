@@ -69,7 +69,11 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <div className="image-placeholder pizza-placeholder">
-            {/* Image placeholder - will be replaced with actual pizza image */}
+            <img
+              src="https://joyfoodsunshine.com/wp-content/uploads/2020/08/whole-wheat-pizza-dough-recipe-1x1-1.jpg"
+              alt="Chutná pizza z Pizzérie Fantázia"
+              className="hero-pizza-image"
+            />
             <motion.div
               className="floating-element element-1"
               animate={{

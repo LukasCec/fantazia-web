@@ -72,7 +72,11 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="image-placeholder restaurant-placeholder">
-              {/* Image placeholder - will be replaced with actual restaurant image */}
+              <img
+                src="/about/img1.webp"
+                alt="Interiér Pizzérie Fantázia"
+                className="about-restaurant-image"
+              />
             </div>
           </motion.div>
         </div>
