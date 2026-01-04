@@ -1,12 +1,14 @@
 .gallery-page {
+  width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: #ffffff;
 }
 
+/* Hero Section */
 .gallery-hero {
-  padding: 140px 2rem 80px;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(219, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  min-height: 80vh;
+  padding: 8rem 2rem 4rem;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
   position: relative;
   overflow: hidden;
 }
@@ -14,51 +16,103 @@
 .gallery-hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(219, 0, 0, 0.1) 0%, transparent 70%);
-  animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
+  top: -50%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(219, 0, 0, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
 }
 
 .gallery-hero-content {
-  max-width: 800px;
+  max-width: 1400px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
   position: relative;
   z-index: 1;
 }
 
-.gallery-hero h1 {
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 900;
-  background: linear-gradient(135deg, #fff 0%, #DB0000 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1.5rem;
+.hero-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(219, 0, 0, 0.1);
+  color: #DB0000;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: fit-content;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1a1a1a;
   letter-spacing: -2px;
 }
 
-.gallery-hero p {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
+.hero-title .highlight {
+  color: #DB0000;
+  position: relative;
+  display: inline-block;
 }
 
-.gallery-content {
-  padding: 4rem 2rem 6rem;
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: rgba(219, 0, 0, 0.2);
+  z-index: -1;
+  transform: skewY(-1deg);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.hero-image-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, rgba(219, 0, 0, 0.05) 0%, rgba(219, 0, 0, 0.1) 100%);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(219, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(219, 0, 0, 0.1);
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 6rem 2rem;
+  background: #ffffff;
+}
+
+.gallery-container {
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -66,8 +120,7 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem 0;
+  gap: 2.5rem;
 }
 
 .gallery-item {
@@ -75,19 +128,23 @@
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .gallery-item:hover {
-  box-shadow: 0 20px 60px rgba(219, 0, 0, 0.4);
+  box-shadow: 0 12px 40px rgba(219, 0, 0, 0.15);
 }
 
 .gallery-image-placeholder {
   width: 100%;
-  padding-bottom: 100%; /* Square aspect ratio */
+  padding-bottom: 100%;
   position: relative;
-  transition: transform 0.3s ease;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-overlay {
@@ -96,87 +153,59 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(219, 0, 0, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(219, 0, 0, 0.85) 0%, rgba(255, 51, 51, 0.85) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  color: white;
 }
 
 .gallery-item:hover .gallery-overlay {
   opacity: 1;
 }
 
-.gallery-icon {
-  font-size: 4rem;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-  transform: scale(0.8);
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-icon {
-  transform: scale(1);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 968px) {
   .gallery-hero {
-    padding: 120px 1.5rem 60px;
+    padding: 6rem 1.5rem 3rem;
+    min-height: auto;
   }
 
-  .gallery-hero h1 {
+  .gallery-hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-title {
     font-size: 2.5rem;
   }
 
-  .gallery-hero p {
-    font-size: 1rem;
-  }
-
-  .gallery-content {
-    padding: 3rem 1.5rem 4rem;
+  .section-title {
+    font-size: 2.5rem;
   }
 
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  .gallery-hero {
-    padding: 100px 1rem 40px;
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
-  .gallery-image-placeholder {
-    padding-bottom: 75%; /* Slightly rectangular on mobile */
+  .gallery-section {
+    padding: 4rem 1.5rem;
   }
-}
-
-/* Loading animation */
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-.gallery-image-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
 }
 

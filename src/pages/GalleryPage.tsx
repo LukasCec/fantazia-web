@@ -1,117 +1,119 @@
 import { motion } from 'framer-motion';
-export default GalleryPage;
-
-};
-  );
-    </div>
-      <Footer />
-
-      </motion.section>
-        </div>
-          ))}
-            </motion.div>
-              </div>
-                </div>
-                  <span className="gallery-icon">🍕</span>
-                <div className="gallery-overlay">
-              >
-                style={{ backgroundColor: item.color }}
-                className="gallery-image-placeholder"
-              <div
-            >
-              whileTap={{ scale: 0.95 }}
-              }}
-                transition: { duration: 0.3 }
-                zIndex: 10,
-                scale: 1.05,
-              whileHover={{
-              variants={itemVariants}
-              className="gallery-item"
-              key={item.id}
-            <motion.div
-          {galleryItems.map((item) => (
-        <div className="gallery-grid">
-      >
-        animate="visible"
-        initial="hidden"
-        variants={containerVariants}
-        className="gallery-content"
-      <motion.section
-
-      </motion.section>
-        </div>
-          </motion.p>
-            Prezrite si našu zbierku momentov a lahodných jedál
-          >
-            transition={{ delay: 0.4, duration: 0.6 }}
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-          <motion.p
-          </motion.h1>
-            Galéria
-          >
-            transition={{ delay: 0.2, duration: 0.6 }}
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-          <motion.h1
-        <div className="gallery-hero-content">
-      >
-        transition={{ duration: 0.6 }}
-        animate={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -30 }}
-        className="gallery-hero"
-      <motion.section
-
-      <Navbar activePage="galeria" />
-    <div className="gallery-page">
-  return (
-
-  };
-    }
-      }
-        damping: 12
-        stiffness: 100,
-        type: "spring",
-      transition: {
-      y: 0,
-      scale: 1,
-      opacity: 1,
-    visible: {
-    },
-      y: 20
-      scale: 0.8,
-      opacity: 0,
-    hidden: {
-  const itemVariants = {
-
-  };
-    }
-      }
-        staggerChildren: 0.1
-      transition: {
-      opacity: 1,
-    visible: {
-    hidden: { opacity: 0 },
-  const containerVariants = {
-
-  ];
-    { id: 12, color: '#FFE66D' },
-    { id: 11, color: '#FF6B6B' },
-    { id: 10, color: '#DB0000' },
-    { id: 9, color: '#FFE66D' },
-    { id: 8, color: '#FF6B6B' },
-    { id: 7, color: '#DB0000' },
-    { id: 6, color: '#FFE66D' },
-    { id: 5, color: '#FF6B6B' },
-    { id: 4, color: '#DB0000' },
-    { id: 3, color: '#FFE66D' },
-    { id: 2, color: '#FF6B6B' },
-    { id: 1, color: '#DB0000' },
-  const galleryItems = [
-  // Mock gallery items - budú nahradené reálnymi obrázkami
-const GalleryPage = () => {
-
-import './GalleryPage.css';
-import Footer from '../components/Footer';
+import { Image as ImageIcon } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import './GalleryPage.css';
+
+const GalleryPage = () => {
+  const galleryItems = [
+    { id: 1, color: '#fff5f5' },
+    { id: 2, color: '#ffe5e5' },
+    { id: 3, color: '#ffd5d5' },
+    { id: 4, color: '#fff5f5' },
+    { id: 5, color: '#ffe5e5' },
+    { id: 6, color: '#ffd5d5' },
+    { id: 7, color: '#fff5f5' },
+    { id: 8, color: '#ffe5e5' },
+    { id: 9, color: '#ffd5d5' },
+    { id: 10, color: '#fff5f5' },
+    { id: 11, color: '#ffe5e5' },
+    { id: 12, color: '#ffd5d5' },
+  ];
+
+  return (
+    <div className="gallery-page">
+      <Navbar activePage="galeria" />
+
+      {/* Hero Section */}
+      <section className="gallery-hero">
+        <div className="gallery-hero-content">
+          <motion.div
+            className="hero-text-content"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="hero-label">Galéria</span>
+            <h1 className="hero-title">
+              Naše <span className="highlight">kulinárske umenie</span>
+            </h1>
+            <p className="hero-description">
+              Prezrite si našu zbierku momentov a lahodných jedál, ktoré pripravujeme s láskou a vášňou.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="hero-image-content"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="gallery-image-placeholder-hero">
+              <motion.div
+                className="gallery-icon-float"
+                animate={{
+                  y: [0, -20, 0],
+                  rotate: [0, 5, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              >
+                <ImageIcon size={80} strokeWidth={1.5} />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Gallery Grid Section */}
+      <section className="gallery-section">
+        <div className="container">
+          <motion.div
+            className="section-header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="section-label">Fotografie</span>
+            <h2 className="section-title">Naše jedlá v akcii</h2>
+            <p className="section-subtitle">
+              Každé jedlo je pripravené s pozornosťou k detailom
+            </p>
+          </motion.div>
+
+          <div className="gallery-grid">
+            {galleryItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                className="gallery-item"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                whileHover={{ y: -10 }}
+              >
+                <div
+                  className="gallery-image-placeholder"
+                  style={{ backgroundColor: item.color }}
+                >
+                  <div className="gallery-overlay">
+                    <ImageIcon size={48} strokeWidth={1.5} />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default GalleryPage;
 

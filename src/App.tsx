@@ -6,6 +6,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import DeliveryPage from './pages/DeliveryPage';
 import MenuPage from './pages/MenuPage';
+import GalleryPage from './pages/GalleryPage';
 import './App.css';
 
 function HomePage() {
