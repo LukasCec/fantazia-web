@@ -88,8 +88,13 @@ const MenuPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="menu-image-placeholder">
+              <img
+                src="/menu/img1.webp"
+                alt="Pizza z jedálneho lístka Pizzérie Fantázia"
+                className="menu-hero-image"
+              />
               <motion.div
-                className="chef-icon-float"
+                className=""
                 animate={{
                   y: [0, -15, 0],
                   rotate: [0, -5, 0],

@@ -83,9 +83,13 @@ const DeliveryPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="delivery-image-placeholder">
-              {/* Delivery image placeholder */}
+              <img
+                src="/delivery/img1.jpeg"
+                alt="Pizza donáška Pizzéria Fantázia"
+                className="delivery-hero-image"
+              />
               <motion.div
-                className="delivery-icon-float"
+                className=""
                 animate={{
                   y: [0, -20, 0],
                   rotate: [0, 5, 0],
