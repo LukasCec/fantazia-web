@@ -407,6 +407,9 @@
 .title-icon {
   color: #DB0000;
   stroke-width: 2;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
 }
 
 .hours-description {
@@ -438,6 +441,8 @@
 .hours-icon {
   color: #DB0000;
   flex-shrink: 0;
+  width: 24px;
+  height: 24px;
 }
 
 .hours-day {
@@ -539,6 +544,21 @@
     gap: 2rem;
   }
 
+  .hours-title {
+    flex-direction: column;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .title-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .hours-description {
+    text-align: center;
+  }
+
   .section-title {
     font-size: 2.5rem;
   }
@@ -569,6 +589,11 @@
 
   .zone-price {
     font-size: 2rem;
+  }
+
+  .hours-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 

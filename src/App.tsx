@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import DeliveryPage from './pages/DeliveryPage';
 import MenuPage from './pages/MenuPage';
 import GalleryPage from './pages/GalleryPage';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 function HomePage() {
@@ -26,6 +27,7 @@ function HomePage() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Routes>
           <Route path="/" element={<HomePage />} />
